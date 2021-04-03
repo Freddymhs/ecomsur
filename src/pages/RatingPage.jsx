@@ -7,6 +7,7 @@ import {
   useRouteMatch
 } from "react-router-dom";
 import './estilos.css';
+import { ContainerMain, Container__input } from './Styles.jsx';
 
 const RatingPage = () => {
   let match = useRouteMatch();
@@ -34,9 +35,96 @@ const RatingPage = () => {
     //     </Route>
     //   </Switch>
     // </div>
-    <div className="container__main">
-      sdads
-    </div>
+    <ContainerMain>
+      {/* buscador  */}
+      <Container__input>
+        <div className="content__search" >
+          <input type="text" placeholder="Buscar.." name="search" className="form_input" >
+          </input>
+          <button type="submit" className="form_icon" >
+            <i class="material-icons">search</i>
+          </button>
+        </div>
+      </Container__input>
+
+
+      <div className="container__aproved">
+        <h1 className="wrapper_title">sdasda</h1>
+        <div className="wrapper">
+          <div className="box">
+            <p>sdasda</p>
+            <h4>sdadsada</h4>
+
+            <img src="https://picsum.photos/id/237/200/300"
+              alt="" class="gallery_img" />
+          </div>
+          <div className="box">
+            <img src="https://picsum.photos/id/237/200/300"
+              alt="" class="gallery_img" />
+          </div>
+          <div className="box">
+            <img src="https://picsum.photos/id/237/200/300"
+              alt="" class="gallery_img" />
+          </div>
+          <div className="box">
+            <img src="https://picsum.photos/id/237/200/300"
+              alt="" class="gallery_img" />
+          </div>
+          <div className="box">
+            <img src="https://picsum.photos/id/237/200/300"
+              alt="" class="gallery_img" />
+          </div>
+          <div className="box">
+            <img src="https://picsum.photos/id/237/200/300"
+              alt="" class="gallery_img" />
+          </div>
+          <div className="box">
+            <img src="https://picsum.photos/id/237/200/300"
+              alt="" class="gallery_img" />
+          </div>
+          <div className="box">
+            <img src="https://picsum.photos/id/237/200/300"
+              alt="" class="gallery_img" />
+          </div>
+          <div className="box">
+            <img src="https://picsum.photos/id/237/200/300"
+              alt="" class="gallery_img" />
+          </div>
+        </div>
+        {/*  */}
+
+
+
+        {/* <div className="gallery_card" style={{ backgroundColor: 'red' }} >
+            aca va una foto
+            <button>tambien esto</button>
+            <img src="https://picsum.photos/200/300?grayscale"
+              alt="" class="gallery_img" />
+            <p>sdadasda</p>
+          </div> */}
+
+
+
+
+        {/*  */}
+      </div>
+      <div className="container__removed" style={{ backgroundColor: 'white' }}>
+        <h3>calificados</h3>
+
+      </div>
+      <div className="container__footer">
+        test front-end
+      </div>
+
+
+
+
+
+
+
+
+
+    </ContainerMain >
   );
 }
 
@@ -45,3 +133,16 @@ export function Topic() {
   return <h3>Requested topic ID: {topicId}</h3>;
 }
 export default RatingPage;
+
+
+
+
+  // <div className="content__search" >
+  //       {/* <input type="text" placeholder="Search.." name="search" className="form_input" >
+
+  //       </input>
+  //       <button type="submit" className="form_icon">
+  //         <i class="material-icons">search</i>
+  //       </button> */}
+  //       el buscador
+  //     </div>

@@ -6,6 +6,9 @@ import {
   Link
   , useParams, useRouteMatch, useLocation
 } from "react-router-dom";
+import { Menu } from '../../pages/Styles.jsx';
+
+
 
 const Nav = () => {
   const { pathname } = useLocation();
@@ -24,11 +27,12 @@ export default Nav;
 const List = () => {
   return (
 
-    <nav className="nav">
+    <Menu>
       <ul className="ul ul-left">
-
         <li >
-          <Link to="/">Back</Link>
+          <Link to="/">
+            <i class="large material-icons"> arrow_back</i>
+          </Link>
         </li>
 
       </ul>
@@ -43,7 +47,8 @@ const List = () => {
         <li>
           <Link to="/Soporte">Soporte</Link>
         </li>
-      </ul></nav>
+      </ul>
+    </Menu>
 
   );
 }
