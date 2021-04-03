@@ -8,9 +8,9 @@ import {
   , useParams,
   useRouteMatch
 } from "react-router-dom";
-import HomePage from './pages/HomePage.jsx';
+import HomePage from './pages/home/HomePage.jsx';
 import Nav from './components//nav/Nav.jsx';
-import RatingPage from './pages/RatingPage.jsx';
+import RatingPage from './pages/rating/RatingPage.jsx';
 
 function App() {
 
@@ -37,13 +37,13 @@ function App() {
 }
 
 
-function SupporPage() {
-  return <h2>SupporPage</h2>;
-}
+
 function ResultPage() {
   return <h2>Ratingpage</h2>;
 }
-
+function SupporPage() {
+  return <h2>SupporPage</h2>;
+}
 
 
 export default App;

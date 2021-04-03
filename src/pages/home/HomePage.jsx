@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import img from '../../assets/jurado.png';
 
-import img from '../assets/jurado.png';
 
-import { Container, Container__card, Container__text, Container__img, Container_btn } from './Styles.jsx'
+import { Container, Container__card, Container__text, Container__img, Container_btn } from '../Styles.jsx'
 function HomePage() {
 
   return (
