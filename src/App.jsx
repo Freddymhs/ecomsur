@@ -4,9 +4,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
-  , useParams,
-  useRouteMatch
 } from "react-router-dom";
 import HomePage from './pages/home/HomePage.jsx';
 import Nav from './components//nav/Nav.jsx';

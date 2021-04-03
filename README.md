@@ -11,7 +11,8 @@ mi solucion:
 npm install react-router-dom
 npm install --save styled-components
 material icons
-axios
+npm i axios
+
 ```
 
 
