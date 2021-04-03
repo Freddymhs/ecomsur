@@ -49,47 +49,61 @@ const RatingPage = () => {
 
 
       <div className="container__aproved">
-        <h1 className="wrapper_title">sdasda</h1>
+        <h1 className="wrapper_title">Calificados</h1>
         <div className="wrapper">
           <div className="box">
-            <p>sdasda</p>
-            <h4>sdadsada</h4>
+            <button>X</button>
+            <h4>Nombre</h4>
+            <p>xxx  Puntos</p>
+            <img src="https://picsum.photos/id/237/200/300"
+              alt="" class="gallery_img" />
+          </div>
+          <div className="box">
+            <button>X</button>
+            <h4>Nombre</h4>
+            <p>xxx  Puntos</p>
+            <img src="https://picsum.photos/id/237/200/300"
+              alt="" class="gallery_img" />
+          </div>
+          <div className="box">
+            <button>X</button>
+            <h4>Nombre</h4>
+            <p>xxx  Puntos</p>
+            <img src="https://picsum.photos/id/237/200/300"
+              alt="" class="gallery_img" />
+          </div>
+          <div className="box">
+            <button>X</button>
+            <h4>Nombre</h4>
+            <p>xxx  Puntos</p>
+            <img src="https://picsum.photos/id/237/200/300"
+              alt="" class="gallery_img" />
+          </div>
+          <div className="box">
+            <button>X</button>
+            <h4>Nombre</h4>
+            <p>xxx  Puntos</p>
+            <img src="https://picsum.photos/id/237/200/300"
+              alt="" class="gallery_img" />
+          </div>
+          <div className="box">
+            <button>X</button>
+            <h4>Nombre</h4>
+            <p>xxx  Puntos</p>
+            <img src="https://picsum.photos/id/237/200/300"
+              alt="" class="gallery_img" />
+          </div>
+          <div className="box">
+            <button>X</button>
+            <h4>Nombre</h4>
+            <p>xxx  Puntos</p>
+            <img src="https://picsum.photos/id/237/200/300"
+              alt="" class="gallery_img" />
+          </div>
 
-            <img src="https://picsum.photos/id/237/200/300"
-              alt="" class="gallery_img" />
-          </div>
-          <div className="box">
-            <img src="https://picsum.photos/id/237/200/300"
-              alt="" class="gallery_img" />
-          </div>
-          <div className="box">
-            <img src="https://picsum.photos/id/237/200/300"
-              alt="" class="gallery_img" />
-          </div>
-          <div className="box">
-            <img src="https://picsum.photos/id/237/200/300"
-              alt="" class="gallery_img" />
-          </div>
-          <div className="box">
-            <img src="https://picsum.photos/id/237/200/300"
-              alt="" class="gallery_img" />
-          </div>
-          <div className="box">
-            <img src="https://picsum.photos/id/237/200/300"
-              alt="" class="gallery_img" />
-          </div>
-          <div className="box">
-            <img src="https://picsum.photos/id/237/200/300"
-              alt="" class="gallery_img" />
-          </div>
-          <div className="box">
-            <img src="https://picsum.photos/id/237/200/300"
-              alt="" class="gallery_img" />
-          </div>
-          <div className="box">
-            <img src="https://picsum.photos/id/237/200/300"
-              alt="" class="gallery_img" />
-          </div>
+
+
+
         </div>
         {/*  */}
 
@@ -109,7 +123,7 @@ const RatingPage = () => {
         {/*  */}
       </div>
       <div className="container__removed" style={{ backgroundColor: 'white' }}>
-        <h3>calificados</h3>
+        <h1 className="wrapper_title">Decalificados</h1>
 
       </div>
       <div className="container__footer">
