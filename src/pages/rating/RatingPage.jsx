@@ -1,9 +1,5 @@
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-  , useParams,
+  useParams,
   useRouteMatch
 } from "react-router-dom";
 import '../estilos.css';
