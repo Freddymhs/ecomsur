@@ -5,47 +5,86 @@ import {
 import '../estilos.css';
 import { ContainerMain, Container__input, Container__aproved, Card } from '../Styles.jsx';
 
+/*my functions axios*/
+import AxiosFetch from '../../libs/AxiosFetch.js';
+import { useEffect, useState } from "react";
+
 const RatingPage = () => {
-  let match = useRouteMatch();
+  /*datos iniciales y globales*/
+  const [globalData, setglobalData] = useState(
+    {
+      input: 'vacio',
+      page: 1,
+    }
+  );
+  /*estados individuales */
+  const [input, setSearchInput] = useState("vacio");
+  const [page, setPage] = useState(1);
+  const [people, setPeople] = useState({})
+
+
+  //pagination
+  const capurePageValue = (string) => { /*input search*/
+    if (string === "back" && page > 1) { // minimo valor del estado
+      setPage(page - 1)
+    }
+    if (string === "next" && page < 100) { //maximo valor del estado
+      setPage(page + 1)
+    }
+    setglobalData(prevState => ({ ...prevState, page })) /*actualiza datos globales + page */
+  }
+
+  //input search
+  const captureInputValue = (event) => { /*input search*/
+    setSearchInput(event.target.value)
+  }
+  const saveInputValue = () => { /*actualiza datos globales + input search*/
+    setglobalData(prevState => ({ ...prevState, input }))
+  }
+
+  /*metodos de para busqueda y filtros*/
+
+
+  /*metodos*/
+
+  useEffect(() => {   /* document on ready*/
+    // setpeople(AxiosFetch.AllData())
+    console.log(people);
+
+    // if (searchInput !== 'vacio') {
+    //   console.log("busqueda basica");
+    // } else {
+    //   console.log("busqueda de nombre...");
+    // }
+    console.log('los datos van cambiando');
+
+
+
+  }, [globalData])
   return (
-    // <div>
-    //   <ul>
 
-    //     <li>
-    //       <Link to={`${match.url}/components`}>Components</Link>
-    //     </li>
-    //     <li>
-    //       <Link to={`${match.url}/props-v-state`}>
-    //         Props v. State
-    //       </Link>
-    //     </li>
-    //   </ul>
-
-
-    //   <Switch>
-    //     <Route path={`${match.path}/:topicId`}>
-    //       <Topic />
-    //     </Route>
-    //     <Route path={match.path}>
-    //       <h3>Please select a topic.</h3>
-    //     </Route>
-    //   </Switch>
-    // </div>
     <ContainerMain>
       {/* buscador  */}
       <Container__input>
         <div className="content__search" >
-          <input type="text" placeholder="Buscar.." name="search" className="form_input" >
+          <input type="text" placeholder="Buscar.." name="search" className="form_input"
+            onChange={event => captureInputValue(event)} >
           </input>
-          <button type="submit" className="form_icon" >
+          <button type="submit" className="form_icon" onClick={
+            () => { saveInputValue() }
+          }>
             <i class="material-icons">search</i>
           </button>
         </div>
+        <button onClick={() => capurePageValue("back")}>prev</button>
+        <h1>{page}</h1>
+        <button onClick={() => capurePageValue("next")}>next</button>
       </Container__input>
 
 
       <Container__aproved>
         <h1 className="container_title">Calificados</h1>
+
         <div className="container_wrapper">
 
           <Card>
@@ -87,16 +126,3 @@ export function Topic() {
   return <h3>Requested topic ID: {topicId}</h3>;
 }
 export default RatingPage;
-
-
-
-
-  // <div className="content__search" >
-  //       {/* <input type="text" placeholder="Search.." name="search" className="form_input" >
-
-  //       </input>
-  //       <button type="submit" className="form_icon">
-  //         <i class="material-icons">search</i>
-  //       </button> */}
-  //       el buscador
-  //     </div>

@@ -1,17 +1,24 @@
 # prueba ecomsur con reactJS
 - ## resultado
 
-el desafio:
-```
-..
-```
+
 
 mi solucion:
 ```
 npm install react-router-dom
 npm install --save styled-components
 material icons
-npm i axios
+npm install axios
+
+```
+
+mi explicacion:
+```
+
+/Calificaciones = se carga la pagina y se cargan todos los reusltados existentes
+el usuario puede escribir en el input 
+si el contenido el input cambiar se usa la funcion filter para traer los que hacen "match" 
+quieor agregar un icono de espera :)
 
 ```
 
