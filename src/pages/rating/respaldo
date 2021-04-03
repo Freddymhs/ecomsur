@@ -6,8 +6,8 @@ import '../estilos.css';
 import { ContainerMain, Container__input, Container__aproved, Card } from '../Styles.jsx';
 import { useEffect, useState } from "react";
 
-// import AxiosFetch from '../../libs/AxiosFetch.js';/*my functions axios*/
-import axios from 'axios';
+import AxiosFetch from '../../libs/AxiosFetch.js';/*my functions axios*/
+
 
 const RatingPage = () => {
   let { pagina } = useParams(); // catch some params in URL "Calificaciones    /  :pagina"
@@ -15,13 +15,15 @@ const RatingPage = () => {
   /*individual state */
   const [input, setSearchInput] = useState("");
   const [page, setPage] = useState(pagina ? pagina : 0);// exist  or not  param :pagina 
-  const [people, setPeople] = useState(undefined)
+  const [people, setPeople] = useState({})
 
 
   /*initial and global state*/
-
-
-  let globalData = { input: input, page: page };
+  const [globalData, setglobalData] = useState(
+    {
+      input: input, page: page
+    }
+  );
 
   //page value
 
@@ -32,8 +34,8 @@ const RatingPage = () => {
     if (string === "next" && page < 100) { //max value
       setPage(parseInt(page) + 1)
     }
+    setglobalData(prevState => ({ ...prevState, page })) /*datos globales + page */
 
-    globalData = { ...globalData, page }
   }
 
   //search value 
@@ -42,31 +44,23 @@ const RatingPage = () => {
   }
 
   function saveInputValue() {  /*globalData  + input search*/
-    globalData = { ...globalData, input }
-
+    setglobalData(prevState => ({ ...prevState, input }))
   }
 
   /*methods to search/filter/find some result*/
 
-  const [valores, setValores] = useState([]);
 
-  useEffect(() => {
-    axios
-      .get("https://randomuser.me/api/?results=15")
-      .then(res => {
-        const data = res.data;
-        setValores(data.results);
-        console.log(data);
 
-      })
-  }, []);
+  useEffect(() => {   /* document on ready*/
+    console.log('rating page');
+    // setPeople(AxiosFetch.AllData())
+
+  }, [])
   return (
 
-
-
-    < ContainerMain >
-
-      < Container__input >
+    <ContainerMain>
+      {/* buscador  */}
+      <Container__input>
         <div className="content__search" >
           <input type="text" placeholder="Buscar.." name="search" id="inp" className="form_input"
             onChange={event => captureInputValue(event)} >
@@ -80,7 +74,7 @@ const RatingPage = () => {
         <button onClick={(e) => capturePageValue("back")}>prev</button>
         <h1>{globalData.page}</h1>
         <button onClick={(e) => capturePageValue("next")}>next</button>
-      </Container__input >
+      </Container__input>
 
 
       <Container__aproved>
@@ -88,21 +82,13 @@ const RatingPage = () => {
 
         <div className="container_wrapper">
 
-
-          {valores.map((v) =>
-            <Card>
-              <button> X </button>
-              <h4>{v.name.first}</h4>
-              <p>{v.location.country}</p>
-              <img src={v.picture.large}
-                alt="" class="gallery_img" />
-            </Card>
-
-
-          )}
-
-
-
+          <Card>
+            <button>X</button>
+            <h4>Nombre</h4>
+            <p>xxx  Puntos</p>
+            <img src="https://picsum.photos/id/237/200/300"
+              alt="" class="gallery_img" />
+          </Card>
         </div>
       </Container__aproved>
 
@@ -117,8 +103,16 @@ const RatingPage = () => {
       <div className="container__footer">
         test front-end
       </div>
-    </ContainerMain >
 
+
+
+
+
+
+
+
+
+    </ContainerMain >
   );
 }
 

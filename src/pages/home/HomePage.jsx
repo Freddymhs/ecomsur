@@ -1,11 +1,15 @@
 import React from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import img from '../../assets/jurado.png';
-
-
 import { Container, Container__card, Container__text, Container__img, Container_btn } from '../Styles.jsx'
-function HomePage() {
 
+
+function HomePage() {
+  useEffect(() => {
+    console.log('home page')
+
+  }, [])
   return (
 
     <Container>

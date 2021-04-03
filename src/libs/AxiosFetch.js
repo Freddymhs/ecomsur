@@ -1,19 +1,26 @@
 import axios from 'axios';
 
 
-async function AllData() {
 
-  let resQuery = await axios.get('https://randomuser.me/api/?results=15')
-  .then(function (response) { 
-    console.log('consulta realizada');
+async function AllData(props) {
+const {setPeople} = props;
+     return await axios.get(`https://jsonplaceholder.typicode.com/users`)
+      .then(res => {
+        
+        
+        const persons = res.data;
+        setPeople({ persons });
+      })
+  .catch(function (error) {
+    console.log(error);
   })
-  .catch(function (err) {
-    console.log('errores en la consulta');
-    console.log(err)
-  })
+  .then(function () {
+  console.log('datos obtenidos !');
+   
+  });
 
-
-return resQuery;
+    
+  
 }
 
 

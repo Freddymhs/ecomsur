@@ -1,4 +1,4 @@
-import './App.css';
+
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -17,10 +17,16 @@ function App() {
       <Switch>
         <Route path="/Soporte">
           <SupporPage />
+
         </Route>
-        <Route path="/Calificaciones">
-          <RatingPage />
-        </Route>
+
+        {/* path to  dinamic page */}
+        <Route path="/Calificaciones/:pagina" children={<RatingPage />}></Route>
+        {/* path to specific page  */}
+        <Route path="/Calificaciones/" >   <RatingPage />   </Route>
+
+
+
         <Route path="/Resultados">
           <ResultPage />
         </Route>
@@ -28,7 +34,7 @@ function App() {
           <HomePage />
         </Route>
       </Switch>
-    </Router>
+    </Router >
 
   );
 }

@@ -35,7 +35,7 @@ const List = () => {
       </ul>
       <ul className="ul ul-right">
         <li>
-          <Link to="/Calificaciones">Calificaciones</Link>
+          <Link to="/Calificaciones/">Calificaciones</Link>
 
         </li>
         <li>

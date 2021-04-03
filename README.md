@@ -19,7 +19,7 @@ mi explicacion:
 el usuario puede escribir en el input 
 si el contenido el input cambiar se usa la funcion filter para traer los que hacen "match" 
 quieor agregar un icono de espera :)
-
+query en parameetros como :pagina , para comenzar a buscar desde aqui
 ```
 
 
