@@ -3,8 +3,9 @@
 
 
 
-mi solucion:
+use:
 ```
+reactjs
 npm install react-router-dom
 npm install --save styled-components
 material icons
@@ -12,7 +13,7 @@ npm install axios
 
 ```
 
-mi explicacion:
+# mi explicacion:
 
 ```
 - en la ruta "/Calificaciones" se carga la pagina y se cargan todos los reusltados de la api
@@ -35,9 +36,11 @@ existe estado para el "listado de personas"
 - luego en caso de que el "campo de busqueda" tiene algun valor como un texto ej "Freddy" se consulta con "AllData" y se filtra sus datos para regresarse al "listado"
 - si el "campo de busqueda" vuelve a estar vacio  se consulta con "AllData" y se entrega a "listado"
 - en caso de que se use la "paginacion" se consulta con "AllData" y se filtra si es necesario , sino igualmente se regresa el valor al "listado"
+- si el usuario presiona en eliminar se borrara este del "listado" actual.
 
 
 
+# detalles para completar el desafio
 
 - ## etapas del desarrollo para esta prueba
     - ### detalles
