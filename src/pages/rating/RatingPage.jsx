@@ -41,37 +41,23 @@ const RatingPage = () => {
   }
 
   /*methods*/
-  //get all data on load page
-  useEffect(() => {
-    // AxiosFetch.AllData({ setPeople, input: input, pagina: page });
-  }, []);
-
-  // 
-
-  // 
-  // update variable on running
-  // function match() {
-  //   let qt = people.filter((item) => {
-  //     if (item.name.first.includes(input)) {
-  //       console.log('match');
-  //       return item
-  //     }
-  //   })
-  //   setPeople(qt)
-
-  // }
   // buscador
   useEffect(() => {
-
-
-    let res = AxiosFetch.AllData({ setPeople, input: input, page: page, people: people });
-
-    // match()
-
-
-
-
+    AxiosFetch.AllData({ setPeople, input: input, page: page, people: people });
   }, [input, page])
+  //elminiar user
+  useEffect(() => {
+    // let res = AxiosFetch.AllData({ setPeople, input: input, page: page, people: people });
+  }, [input, page])
+
+  // function deleteFromData(cell) {
+  //   var total = people.filter(function (e) {
+  //     return e.cell !== cell
+  //   });
+  //   console.log('nuevos valores aca');
+  //   setPeople(total)
+  // }
+
 
   return (
 
@@ -101,7 +87,11 @@ const RatingPage = () => {
 
           {people.map((v) =>
             <Card>
-              <button> X </button>
+              <button onClick={
+                () =>
+                  // deleteFromData(v.cell)
+                  AxiosFetch.deleteFromData(v.cell, people, setPeople)
+              }> X </button>
               <h4>{v.name.first}</h4>
               <p>{v.location.country}</p>
               <img src={v.picture.large}

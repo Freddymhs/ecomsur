@@ -37,11 +37,18 @@ const {setPeople,input,page,people} = props;
       setPeople(filtered)  
     })
   }
-
 }
 
+
+function deleteFromData(cell,people,setPeople) {
+    var total = people.filter(function (e) {
+      return e.cell !== cell
+    });
+    console.log('nuevos valores aca');
+    setPeople(total)
+  }
 
 
 
 let AxiosFetch;
-export default AxiosFetch = { AllData };
+export default AxiosFetch = { AllData ,deleteFromData};
