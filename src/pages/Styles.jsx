@@ -214,7 +214,7 @@ justify-self: center;
   -moz-border-radius: 36px;
   -ms-border-radius: 36px;
   -o-border-radius: 36px;
-    width: 100%;
+    width: 96%;
   h4 {
   font-style: normal;
   font-weight: normal;
